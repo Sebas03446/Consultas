@@ -11,6 +11,7 @@ from reportlab.lib.pagesizes import A4
 from datetime import datetime
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
+from datetime import datetime
 
 
 class QueryDocumentView(views.APIView):
@@ -35,10 +36,10 @@ class QueryDocumentView(views.APIView):
         pdf.setFont('Vera', 20)
         pdf.drawString(50, 500, 'Cantidad de veces buscada: ' +
                        str(querySearch.amount))
-        pdf.drawString(50, 470, 'Primera busqueda: ' +
-                       str(querySearch.firstSearch))
-        pdf.drawString(50, 440, 'última busqueda: ' +
-                       str(querySearch.lastSearch))
+        pdf.drawString(50, 470, 'Primera busqueda: ' + datetime.utcfromtimestamp(querySearch.firstSearch).strftime('%Y-%m-%d %H:%M:%S')
+                       )
+        pdf.drawString(50, 440, 'Última busqueda: ' + datetime.utcfromtimestamp(querySearch.lastSearch).strftime('%Y-%m-%d %H:%M:%S')
+                       )
         pdf.drawString(50, 410, 'Número de resultados: ' +
                        str(querySearch.numberResults))
 
