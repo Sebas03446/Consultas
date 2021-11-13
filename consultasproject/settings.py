@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'consultasproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dqr26s74ub77m',
+        'USER': 'anubempqirzbdt',
+        'PASSWORD': '823779d1d1fbf40b6c0638fbe69c4a5db30b3b71fad6cea3acb0818889e02367',
+        'HOST': 'ec2-44-198-236-169.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 

@@ -1,1 +1,1 @@
-from querySearch import QuerySearch
+from .querySearch import QuerySearch
