@@ -1,1 +1,1 @@
-from querySerializer import QuerySerializer
+from .querySerializer import QuerySerializer

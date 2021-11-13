@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from consultasApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('querySearch/', views.QuerySearchView.as_view()),
+    path('querySearch/<str:pk>/', views.QueryFileView.as_view()),
+    path('querySearch/document/<str:pk>/', views.QueryDocumentView.as_view())
 ]
